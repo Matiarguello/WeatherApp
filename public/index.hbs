@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1"/>
+	<title>Weather Search - WebApp Express/Axios</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="./static/style.css">
+
+</head>
+
+<body>
+	{{!-- <div class="portada">
+		<center>Portada </center>
+	</div> --}}
+
+
+	<div class="contenedor">
+
+		{{> portada }}
+
+
+		<div class="busqueda-container">
+			<div class="input-search">
+				<form method="GET" action="/search">
+					<center> <input class="input-search form-control" type="search" name="name"
+							placeholder="🔍 Ingresa un pais o ciudad para buscar"> </center>
+			</div>
+			</form>
+
+			{{!-- Se muestra o no el mensaje de que no hay resultados, depende de la variable noresults para mostarse
+			--}}
+
+			{{#unless msg.length}}
+			{{else }}
+			<div class="resultados">
+				<center>
+					<h2>{{msg}}</h2>
+				</center>
+			</div>
+			{{/unless}}
+
+			{{!-- Si hay resultados se muestran, sino no.. --}}
+			{{#unless datos.length}}
+			{{else}}
+			<div class="resultados">
+				<center>
+					<h2> 🔎 Resultados de la búsqueda</h2>
+				</center>
+				<ul>
+					{{#each datos as |item index|}}
+
+					<div class="resultado-div">
+						➡️ <a
+							href="/location?lat={{item.latitud}}&lon={{item.longitud}}">{{item.nombre}}</a>
+					</div>
+
+					{{/each}}
+				</ul>
+			</div>
+			{{/unless}}
+
+			{{!-- Info de la localizacion en caso de haber seleccionado una --}}
+
+			{{#if info}}
+			<center>
+				<h1 class="temp-title"> 📄 Datos obtenidos de: {{info.lugar}}</h1>
+			</center>
+
+			<div class="info-container">
+				<h3>🌍 <b>Lugar:</b> {{info.lugar}}</h3>
+				<h3>🌞 <b>Temperatura:</b> {{info.temperatura}}º</h3>
+				{{!-- <h3>🕕 <b>Hora:</b> {{info.hora}}</h3> --}}
+				<h3>🕰️ <b>Zona Horaria</b> {{info.zona_horaria}}</h3>
+				<h3>🌤️ <b>Amanecer:</b> {{info.amanecer}}</h3>
+				<h3>🌥️ <b>Atardecer:</b> {{info.atardecer}}</h3>
+				<h3>❄️ <b>Nieve:</b> {{info.nieve}} %</h3>
+				<h3>☁️ <b>Nubes:</b> {{info.nubes}} %</h3>
+			</div>
+			{{/if}}
+
+		</div>
+
+
+	</div>
+
+
+</body>
+{{> footer}}
+
+
+
+
+</html>

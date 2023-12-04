@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1"/>
+	<title>Weather Search - Ayuda</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="./static/style.css">
+</head>
+
+<body>
+	<div class="contenedor">
+		{{> portada logo="./static/help.png" }}
+
+		<div class="about-div">
+			<center>
+			<h2> <u>¿ Por qué me dice 'No se encontraron resultados' ?</u> </h2> 
+			<h3>Puede deberse a varios problemas. Primero es que la api que
+				uso solo tiene un limite de uso de 50 busquedas.
+				
+				Tambien puede
+				ser que la api de clima no encontró el lugar en su base de datos, pero 
+				si está este lugar en la api de busqueda de lugares (si, son dos apis
+				distintas).
+
+				Otro problema puede ser que ya los tokens de las apis no funcionan correctamente,
+				se vencieron o vaya a saber. Se modifican en el archivo .env. Dejo los respectivos 
+				links por si quieren cambiar los tokens.
+			</h3>
+			<br>
+			<h2> <u>Links:</u></h2>
+			<h2> <b>Api busqueda de ciudades:</b> <a href="https://www.mapbox.com/"> Map Box</a></h2>
+			<h2> <b>Api busqueda de clima:</b> <a href="https://www.weatherbit.io/"> Weather Bit</a></h2>
+			</center>
+		</div>
+	</div>
+
+</body>
+
+{{> footer }}
+</html>

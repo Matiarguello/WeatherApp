@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1"/>
+	<title>Weather Search - Àcerca De</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+		integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="./static/style.css">
+</head>
+
+<body>
+	<div class="contenedor">
+		{{> portada logo="./static/about.png" }}
+
+		<div class="about-div">
+			<center>
+			<h2> <u>Autor:</u> </h3> <h3>Matias Argüello</h3>
+			<br>
+			<h2> <u>Tecnologias usadas:</u> </h2> <h3>Node JS - Express - Handlebars</h3>
+			<br>
+			<h2> <u>Contacto:</u></h2>
+			<h3>📧 <b>Email:</b> <a href="mailto:MatiasArguello09@gmail.com"> Correo Gmail</a></h3>
+			<br>
+			<h3>💻 <b>Github:</b> <a href="https://github.com/MatiasEsf"> <span>Github Repositorio</span></a> </h3>
+			<br>
+			<h2> <u>Acerca del proyecto:</u></h2>
+			<h3 class="about-txt"> La idea era pasar el proyecto que funcionaba solo en consola a una web html.
+				Más que nada queria mostrar el funcionamiento, el front no es mi fuerte pero hago
+				lo mejor que puedo. Le pude haber puesto más ganas aun al front pero no era el objetivo.
+				Las imagenes la hice con la ia de bing, quedaron muy lindas a mi gusto. El proyecto
+				tambien se puede visualizar en celular, es una web responsiva.
+
+				Para las busquedas de ciudades usé la api de MapBox y para el clima usé la
+				api de Weather Bit. Los links pueden encontrarlos en la sección de 'ayuda'.
+			</h3>
+			</center>
+		</div>
+	</div>
+
+</body>
+
+{{> footer }}
+</html>
